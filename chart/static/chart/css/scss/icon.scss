@@ -1,8 +1,7 @@
 .icon {
+  display: inline-block;
   width: 39px;
   height: 39px;
-  display: block;
-  float: left;
   -webkit-background-size:contain;
   background-size:contain;
   transition: all 200ms ease;
@@ -24,4 +23,14 @@
 }
 .icon.pinterest:hover {
   background-image: url('../../chart/img/39x39_pinterest_normal.png');
+}
+.icon.cell {
+  width: 24px;
+  height: 17px;
+  background-image: url('../../chart/img/24x21_telephone_btn.png');
+}
+.icon.life {
+  width: 24px;
+  height: 13px;
+  background-image: url('../../chart/img/Life_icon.png');
 }

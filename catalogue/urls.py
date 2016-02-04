@@ -20,6 +20,15 @@ from chart import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
     url(r'^$', views.IndexView.as_view(), name='home'),
+    url(r'^catalogue/$', views.CatalogueView.as_view(), name='catalogue'),
+    url(r'^product/$', views.ProductView.as_view(), name='product'),
+    url(r'^about/$', views.AboutView.as_view(), name='about'),
+    url(r'^cooperation/$', views.CooperationView.as_view(), name='cooperation'),
+    url(r'^brands/$', views.BrandsView.as_view(), name='brands'),
+    url(r'^certificates/$', views.CertificateView.as_view(), name='certificates'),
+    url(r'^articles/$', views.ArticleView.as_view(), name='article'),
+    url(r'^map/$', views.MapView.as_view(), name='map'),
+    url(r'^contacts/$', views.ContactView.as_view(), name='contact')
+
 ]
