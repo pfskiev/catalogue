@@ -1,0 +1,51 @@
+footer {
+  padding-top: 40px;
+  border-top: 15px solid #fad280;
+  h3 {
+    margin: 5px 10px;
+    font-size:17px;
+  }
+  input {
+    margin: 5px 10px;
+    padding: 5px;
+    display: inline-block;
+    min-width: 40%;
+    min-height: 20px;
+    transition: all 200ms ease;
+  }
+  a.subscribe {
+    margin: 5px 10px;
+    padding: 7px;
+    display: inline-block;
+    min-width: 40%;
+    min-height: 17px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #079e9e;
+    transition: all 200ms ease;
+  }
+  a.subscribe:hover{
+    background-color: #48d1cc;
+  }
+  a.icon{
+    margin-top:30px;
+    margin-bottom:20px;
+  }
+  p {
+    margin-top: 20px;
+    text-align: center;
+  }
+  @media all and (max-width: 768px){
+    input {
+      display: block;
+      width: 95%;
+      margin: 10px auto;
+    }
+    a.subscribe {
+      display: block;
+      width: 95%;
+      margin: 10px auto;
+    }
+  }
+}

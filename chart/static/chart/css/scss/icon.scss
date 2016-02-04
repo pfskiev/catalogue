@@ -7,18 +7,24 @@
   transition: all 200ms ease;
 }
 .icon.twitter {
+  margin-right: 10px;
+  float: right;
   background-image: url('../../chart/img/39x39_twitter_normal.png');
 }
 .icon.twitter:hover {
   background-image: url('../../chart/img/39x39_twitter.png');
 }
 .icon.facebook {
+  margin-right: 10px;
+  float: right;
   background-image: url('../../chart/img/39x39_facebook.png');
 }
 .icon.facebook:hover {
   background-image: url('../../chart/img/39x39_facebook_up.png');
 }
 .icon.pinterest {
+  margin-right: 10px;
+  float: right;
   background-image: url('../../chart/img/39x39_pinterest_up.png');
 }
 .icon.pinterest:hover {
