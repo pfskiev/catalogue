@@ -53,6 +53,7 @@ class CertificateView(generic.ListView):
 
 class ArticleView(generic.ListView):
     template_name = 'chart/partials/articles.html'
+    context_object_name = 'articles_list'
 
     def get_queryset(self):
         return Article.objects.order_by('title')[:100]

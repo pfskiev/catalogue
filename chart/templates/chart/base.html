@@ -16,8 +16,10 @@
 <body>
 {% include 'chart/templates/header.html' %}
 {% include 'chart/templates/nav.html' %}
-{% block content %}
-{% endblock %}
+<section>
+    {% block content %}
+    {% endblock %}
+</section>
 {% include 'chart/templates/footer.html' %}
 <script src="{% static 'chart/vendor/jquery/dist/jquery.min.js' %}"></script>
 <script src="{% static 'chart/js/main.js' %}"></script>

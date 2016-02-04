@@ -5,6 +5,7 @@
 @import 'scss/header';
 @import 'scss/footer';
 @import 'scss/nav';
+@import 'scss/section';
 @import 'scss/icon';
 * {
   margin: 0;
@@ -15,11 +16,4 @@ body {
   font-size:17px;
   color: #333333;
   background-color: #efefef;
-}
-section {
-  padding: 10px;
-  height: 400px;
-}
-.title {
-  color: #009999;
 }

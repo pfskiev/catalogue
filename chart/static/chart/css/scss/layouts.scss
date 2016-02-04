@@ -3,12 +3,31 @@
   .box {
     flex: 1 0 auto;
   }
-  .box-3 {
-    flex: 1 0 (100%/3);
-  }
   .box-2 {
     flex: 1 0 (100%/2);
   }
+  .box-3 {
+    flex: 1 0 (100%/3);
+  }
+  .box-4 {
+    flex: 1 0 (100%/4);
+  }
+  .box-5 {
+    flex: 1 0 (100%/5);
+  }
+  .box-6 {
+    flex: 1 0 (100%/6);
+  }
+  .box-7 {
+    flex: 1 0 (100%/7);
+  }
+  .box-8 {
+    flex: 1 0 (100%/8);
+  }
+  .box-9 {
+    flex: 1 0 (100%/9);
+  }
+
 }
 .flex.row {
   flex-direction: row;
