@@ -4,14 +4,18 @@
 {% endblock %}
 {% block content %}
     {% load staticfiles %}
-{% for article in articles_list %}
+{% for object in object_list %}
     <div class="flex row sm-column">
         <div class="box-8">
-            <a href="/"><img src="{% static 'chart/media/' %}{{ article.img }}" alt=""></a>
+            <div class="flex column justify">
+                <a href="/"><img src="{% static 'chart/media/' %}{{ object.img }}" alt=""></a>
+            </div>
         </div>
         <div class="box-2">
-            <h4>{{ article.title }}</h4>
-            <p>{{ article.text }}</p>
+            <div class="flex column left">
+                <h4>{{ object.title }}</h4>
+                <p>{{ object.text }}</p>
+            </div>
         </div>
     </div>
 {% endfor %}

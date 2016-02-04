@@ -27,6 +27,8 @@ class Product(models.Model):
 
 class About(models.Model):
     title = models.CharField(max_length=200)
+    text = models.CharField(max_length=600, default='type')
+    img = models.FileField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -41,6 +43,8 @@ class Cooperation(models.Model):
 
 class Brand(models.Model):
     title = models.CharField(max_length=200)
+    text = models.CharField(max_length=600, default='type')
+    img = models.FileField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -48,6 +52,8 @@ class Brand(models.Model):
 
 class Certificate(models.Model):
     title = models.CharField(max_length=200)
+    text = models.CharField(max_length=600, default='type')
+    img = models.FileField(null=True, blank=True)
 
     def __str__(self):
         return self.title

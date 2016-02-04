@@ -25,6 +25,7 @@ class ProductView(generic.ListView):
 
 class AboutView(generic.ListView):
     template_name = 'chart/partials/about.html'
+    context_object_name = 'object_list'
 
     def get_queryset(self):
         return About.objects.order_by('title')[:100]
@@ -39,6 +40,7 @@ class CooperationView(generic.ListView):
 
 class BrandsView(generic.ListView):
     template_name = 'chart/partials/brands.html'
+    context_object_name = 'object_list'
 
     def get_queryset(self):
         return Brand.objects.order_by('title')[:100]
@@ -46,6 +48,7 @@ class BrandsView(generic.ListView):
 
 class CertificateView(generic.ListView):
     template_name = 'chart/partials/certificates.html'
+    context_object_name = 'object_list'
 
     def get_queryset(self):
         return Certificate.objects.order_by('title')[:100]
@@ -53,7 +56,7 @@ class CertificateView(generic.ListView):
 
 class ArticleView(generic.ListView):
     template_name = 'chart/partials/articles.html'
-    context_object_name = 'articles_list'
+    context_object_name = 'object_list'
 
     def get_queryset(self):
         return Article.objects.order_by('title')[:100]
