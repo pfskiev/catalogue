@@ -64,6 +64,7 @@ class ArticleView(generic.ListView):
 
 class MapView(generic.ListView):
     template_name = 'chart/partials/map.html'
+    context_object_name = 'object_list'
 
     def get_queryset(self):
         return Map.objects.order_by('title')[:100]
@@ -71,6 +72,25 @@ class MapView(generic.ListView):
 
 class ContactView(generic.ListView):
     template_name = 'chart/partials/contact.html'
+    context_object_name = 'object_list'
 
     def get_queryset(self):
         return Contact.objects.order_by('title')[:100]
+
+
+class ArticleDetailView(generic.DetailView):
+    model = Article
+    template_name = 'chart/partials/detail.html'
+    context_object_name = 'object'
+
+
+class BrandsDetailView(generic.DetailView):
+    model = Brand
+    template_name = 'chart/partials/detail.html'
+    context_object_name = 'object'
+
+
+class CertificatesDetailView(generic.DetailView):
+    model = Certificate
+    template_name = 'chart/partials/detail.html'
+    context_object_name = 'object'

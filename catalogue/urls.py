@@ -29,6 +29,10 @@ urlpatterns = [
     url(r'^certificates/$', views.CertificateView.as_view(), name='certificates'),
     url(r'^articles/$', views.ArticleView.as_view(), name='article'),
     url(r'^map/$', views.MapView.as_view(), name='map'),
-    url(r'^contacts/$', views.ContactView.as_view(), name='contact')
+    url(r'^contacts/$', views.ContactView.as_view(), name='contact'),
+    url(r'^articles/(?P<pk>[0-9]+)/$', views.ArticleDetailView.as_view(), name='detail'),
+    url(r'^brands/(?P<pk>[0-9]+)/$', views.BrandsDetailView.as_view(), name='detail'),
+    url(r'^certificates/(?P<pk>[0-9]+)/$', views.CertificatesDetailView.as_view(), name='detail'),
+
 
 ]

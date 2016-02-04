@@ -4,4 +4,8 @@ input {
   font-family:'HelveticaNeueCyr-Light', sans-serif;
   font-size:17px;
   color: #333333;
+  transition: all .5s ease;
+}
+input:hover{
+  border-color: #079e9e;
 }
