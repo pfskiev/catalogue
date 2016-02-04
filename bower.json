@@ -1,0 +1,22 @@
+{
+  "name": "catalogue",
+  "authors": [
+    "Constantine Podlesny"
+  ],
+  "description": "catalogue",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "chart/static/chart",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
+}

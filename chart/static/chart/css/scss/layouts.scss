@@ -1,0 +1,45 @@
+.flex {
+  display: flex;
+  .box {
+    flex: 1 0 auto;
+  }
+  .box-3 {
+    flex: 1 0 (100%/3);
+  }
+}
+.flex.row {
+  flex-direction: row;
+}
+.flex.column {
+  flex-direction: column;
+}
+.flex.wrap {
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.order-4 {
+  order: 4;
+}
+.order-5 {
+  order: 5;
+}
+.order-6 {
+  order: 6;
+}
+.order-7 {
+  order: 7;
+}
+@media all and (max-width: 768px){
+  .flex.sm-column {
+    flex-direction: column;
+  }
+}

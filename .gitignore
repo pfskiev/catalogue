@@ -1,0 +1,5 @@
+.idea/
+.DS-Store/
+*/bower_componentes/
+*/node_modules/
+*/*.pyc
