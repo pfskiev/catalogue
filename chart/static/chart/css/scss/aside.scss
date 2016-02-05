@@ -4,7 +4,7 @@ aside {
   }
   a {
     display: block;
-    padding: 5px;
+    padding: 10px;
     color: #333333;
     text-decoration: none;
     transition: all .5s ease;
@@ -12,13 +12,7 @@ aside {
   a:hover{
     text-decoration: underline;
   }
-  .dropdown-toggle {
-    color: #009999;
-  }
-  .dropdown {
-    display: none;
-  }
-  .dropdown.on{
-    display: flex;
+  a:not(.title){
+    margin-left: 20px;
   }
 }
