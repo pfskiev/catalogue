@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.IndexView.as_view(), name='home'),
     url(r'^catalogue/$', views.CatalogueView.as_view(), name='catalogue'),
+    url(r'^catalogue/(?P<pk>[0-9]+)/$', views.ProductDetailView.as_view(), name='detail'),
     url(r'^product/$', views.ProductView.as_view(), name='product'),
     url(r'^about/$', views.AboutView.as_view(), name='about'),
     url(r'^cooperation/$', views.CooperationView.as_view(), name='cooperation'),

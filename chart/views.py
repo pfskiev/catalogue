@@ -1,19 +1,21 @@
 from django.views import generic
-from chart.models import Article, Catalogue, Product, About, Cooperation, Brand, Certificate, Map, Contact
+from django.views.generic import ListView
+
+from chart.models import Article, Catalogue, Product, About, Cooperation, Brand, Certificate, Map, Contact, Menu
 
 
 class IndexView(generic.ListView):
     template_name = 'chart/partials/home.html'
 
     def get_queryset(self):
-        return Article.objects.order_by('title')[:100]
+        return Menu.objects.order_by('title')[:100]
 
 
-class CatalogueView(generic.ListView):
+class CatalogueView(ListView):
+    queryset = Catalogue.objects.order_by('title')[:100]
     template_name = 'chart/partials/catalogue.html'
-
-    def get_queryset(self):
-        return Catalogue.objects.order_by('title')[:100]
+    context_object_name = 'object_list'
+    paginate_by = 3
 
 
 class ProductView(generic.ListView):
@@ -94,3 +96,15 @@ class CertificatesDetailView(generic.DetailView):
     model = Certificate
     template_name = 'chart/partials/detail.html'
     context_object_name = 'object'
+
+
+class ProductDetailView(generic.DetailView):
+    model = Catalogue
+    template_name = 'chart/partials/product.html'
+    context_object_name = 'object_list'
+
+
+class NavView(generic.DetailView):
+    model = Menu
+    template_name = 'chart/templates/nav-test.html'
+    context_object_name = 'object_list'

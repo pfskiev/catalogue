@@ -3,5 +3,37 @@
     каталог
 {% endblock %}
 {% block content %}
-
+    {% load staticfiles %}
+    <div class="flex row sm-column">
+        <div class="box-8">
+            <div class="flex column left">
+                {% include 'chart/templates/aside.html' %}
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="flex row wrap sm-column justify">
+            {% for object in object_list %}
+                <div class="box-3">
+                    {% if object.img %}
+                        <a href="{{ object.id }}"><img src="{% static 'chart/media/' %}{{ object.img }}" alt=""></a>
+                    {% endif %}
+                    <h4>{{ object.title }}</h4>
+                    <p>{{ object.text }}</p>
+                    <p>{{ object.price }}</p>
+                </div>
+            {% endfor %}
+                <div class="box">
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                    <span>
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

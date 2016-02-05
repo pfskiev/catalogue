@@ -1,0 +1,24 @@
+aside {
+  li {
+    list-style: none;
+  }
+  a {
+    display: block;
+    padding: 5px;
+    color: #333333;
+    text-decoration: none;
+    transition: all .5s ease;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+  .dropdown-toggle {
+    color: #009999;
+  }
+  .dropdown {
+    display: none;
+  }
+  .dropdown.on{
+    display: flex;
+  }
+}
