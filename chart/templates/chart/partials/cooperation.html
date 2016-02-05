@@ -1,7 +1,23 @@
 {% extends 'chart/base.html' %}
 {% block title %}
-    сотрудничество
+    статьи
 {% endblock %}
 {% block content %}
-
+    {% load staticfiles %}
+{% for object in object_list %}
+    <div class="flex row sm-column">
+        <div class="box-8">
+            <div class="flex column justify">
+                {% if object.img %}
+                    <a href="/"><img src="{% static 'chart/media/' %}{{ object.img }}" alt=""></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="flex column left">
+                <p>{{ object.paragraph }}</p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
 {% endblock %}

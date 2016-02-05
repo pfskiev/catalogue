@@ -90,6 +90,9 @@ nav {
     .sm-show {
       display: flex;
     }
+    ul:last-child a {
+      text-align: center;
+    }
   }
   .sm-hide {
       display: none;

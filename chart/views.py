@@ -30,14 +30,15 @@ class AboutView(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return About.objects.order_by('title')[:100]
+        return About.objects.order_by('paragraph')[:100]
 
 
 class CooperationView(generic.ListView):
     template_name = 'chart/partials/cooperation.html'
+    context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Cooperation.objects.order_by('title')[:100]
+        return Cooperation.objects.order_by('paragraph')[:100]
 
 
 class BrandsView(generic.ListView):

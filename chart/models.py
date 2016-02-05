@@ -15,6 +15,7 @@ class Catalogue(models.Model):
     title = models.CharField(max_length=200)
     text = models.CharField(max_length=600, default='type')
     price = models.CharField(max_length=600, default='type')
+    description = models.TextField(max_length=600, null=True, blank=True)
     img = models.FileField(null=True, blank=True)
 
     def __str__(self):
@@ -29,8 +30,7 @@ class Product(models.Model):
 
 
 class About(models.Model):
-    title = models.CharField(max_length=200)
-    text = models.CharField(max_length=600, default='type')
+    paragraph = models.CharField(max_length=600, default='type')
     img = models.FileField(null=True, blank=True)
 
     def __str__(self):
@@ -38,10 +38,10 @@ class About(models.Model):
 
 
 class Cooperation(models.Model):
-    title = models.CharField(max_length=200)
+    paragraph = models.CharField(max_length=600, default='type')
 
     def __str__(self):
-        return self.title
+        return self.paragraph
 
 
 class Brand(models.Model):
