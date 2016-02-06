@@ -1,18 +1,19 @@
 section {
-  padding: 20px 10px 30px 10px;
-  .card {
-    display: block;
-    margin: 5px auto 10px;
-    max-width: 260px;
-    background-color: #efefef;
-    box-shadow: 0 20px 30px rgba(128, 128, 128, 0.2);
-    transition: all .5s ease;
-    h4 {
+  h4 {
       display: block;
       text-align: center;
       margin-top: 10px;
       margin-bottom: 20px;
     }
+  padding: 20px 10px 30px 10px;
+  .card {
+    display: block;
+    margin: 5px auto 10px;
+    padding:10px 0 10px 0;
+    max-width: 260px;
+    background-color: #efefef;
+    box-shadow: 0 20px 30px rgba(128, 128, 128, 0.2);
+    transition: all .5s ease;
     p {
       display: block;
       margin-top: 5px;
@@ -38,5 +39,8 @@ section {
   .pagination {
     width:200px;
     margin: 30px auto;
+    a {
+      color: #009999;
+    }
   }
 }
