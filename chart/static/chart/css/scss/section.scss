@@ -1,10 +1,15 @@
 section {
+  h3 {
+    padding: 10px 0 20px;
+    font-family: 'HelveticaNeueCyr-UltraLight', sans-serif;
+    color: #009999;
+  }
   h4 {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
   padding: 20px 10px 30px 10px;
   .card {
     display: block;
@@ -18,6 +23,7 @@ section {
       display: block;
       margin-top: 5px;
       margin-bottom: 10px;
+      text-indent: 0;
       text-align: center;
       line-height: 24px;
     }
@@ -33,6 +39,7 @@ section {
   p {
     margin-top: 5px;
     margin-bottom: 10px;
+    text-indent: 40px;
     text-align: justify;
     line-height: 24px;
   }

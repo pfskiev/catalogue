@@ -77,6 +77,7 @@ class Contact(models.Model):
     title = models.CharField(max_length=200)
     phone = models.CharField(max_length=600, default='type')
     email = models.CharField(max_length=600, default='type')
+    num = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title

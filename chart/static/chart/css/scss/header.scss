@@ -10,11 +10,11 @@ header {
     padding: 3px;
     text-align: center;
   }
-  input {
+  form>input {
     margin-top: 20px;
     padding: 5px;
     width: 80%;
-    display: inline-block;
+    display: flex;
     min-width: 40%;
     min-height: 20px;
   }

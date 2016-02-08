@@ -1,3 +1,6 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
+from django.shortcuts import render
 from django.views import generic
 from django.views.generic import ListView
 
@@ -33,12 +36,31 @@ class AboutView(generic.ListView):
         return About.objects.order_by('paragraph')[:100]
 
 
-class CooperationView(generic.ListView):
-    template_name = 'chart/partials/cooperation.html'
-    context_object_name = 'object_list'
+def cooperation_listing(request):
+    queryset_list = Cooperation.objects.all()
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(
+                Q(paragraph__icontains=query)
+        ).distinct()
+    paginator = Paginator(queryset_list, 10)  # Show 10 contacts per page
+    page_request_var = "page"
+    page = request.GET.get(page_request_var)
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        queryset = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        queryset = paginator.page(paginator.num_pages)
 
-    def get_queryset(self):
-        return Cooperation.objects.order_by('paragraph')[:100]
+    context = {
+        "object_list": queryset,
+        "title": "Сотрудничество",
+        "page_request_var": page_request_var,
+    }
+    return render(request, "chart/partials/cooperation.html", context)
 
 
 class BrandsView(generic.ListView):
@@ -102,10 +124,4 @@ class CertificatesDetailView(generic.DetailView):
 class ProductDetailView(generic.DetailView):
     model = Catalogue
     template_name = 'chart/partials/product.html'
-    context_object_name = 'object_list'
-
-
-class NavView(generic.DetailView):
-    model = Menu
-    template_name = 'chart/templates/nav-test.html'
     context_object_name = 'object_list'

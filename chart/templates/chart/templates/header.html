@@ -13,7 +13,7 @@
     </div>
     <div class="box-3 sm-hide">
         <form method="GET" action="">
-            <input class="box" type="text" title="search" name="q" placeholder="Поиск">
+            <input type="text" name="q" value="{{ request.GET.q }}" class="sm-hide" placeholder="Поиск">
         </form>
     </div>
 </header>
