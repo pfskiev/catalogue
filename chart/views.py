@@ -3,7 +3,6 @@ from django.db.models import Q
 from django.shortcuts import render
 from django.views import generic
 from django.views.generic import ListView
-
 from chart.models import Article, Catalogue, Product, About, Cooperation, Brand, Certificate, Map, Contact, Menu
 
 

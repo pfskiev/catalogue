@@ -5,3 +5,4 @@
 */*.pyc
 chart/static/CACHE/css/*.css
 chart/static/chart/vendor/
+.sass-cache/

@@ -26,6 +26,14 @@ input:hover {
   font-weight: normal;
   src: local("HelveticaNeueCyr-UltraLight"), url("../../chart/fonts/HelveticaNeueCyr-UltraLight.woff") format("woff"); }
 .flex {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex; }
   .flex .left {
     justify-content: flex-start;

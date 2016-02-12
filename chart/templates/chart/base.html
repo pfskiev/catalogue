@@ -1,6 +1,6 @@
 {% load staticfiles compress%}
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,5 +22,6 @@
 {% include 'chart/templates/footer.html' %}
 <script src="{% static 'chart/vendor/jquery/dist/jquery.min.js' %}"></script>
 <script src="{% static 'chart/js/main.js' %}"></script>
+<script src="{% static 'chart/vendor/modernizr/src/ModernizrProto.js' %}"></script>
 </body>
 </html>

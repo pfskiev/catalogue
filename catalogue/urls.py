@@ -15,21 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
 from chart import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+
     url(r'^$', views.IndexView.as_view(), name='home'),
+    url(r'^admin/', admin.site.urls),
     url(r'^catalogue/$', views.CatalogueView.as_view(), name='catalogue'),
     url(r'^catalogue/(?P<pk>[0-9]+)/$', views.ProductDetailView.as_view(), name='detail'),
-
-
     url(r'^product/$', views.ProductView.as_view(), name='product'),
     url(r'^about/$', views.AboutView.as_view(), name='about'),
-
     url(r'^cooperation/$', views.cooperation_listing, name='cooperation'),
-
     url(r'^brands/$', views.BrandsView.as_view(), name='brands'),
     url(r'^certificates/$', views.CertificateView.as_view(), name='certificates'),
     url(r'^articles/$', views.ArticleView.as_view(), name='article'),
@@ -38,6 +34,5 @@ urlpatterns = [
     url(r'^articles/(?P<pk>[0-9]+)/$', views.ArticleDetailView.as_view(), name='detail'),
     url(r'^brands/(?P<pk>[0-9]+)/$', views.BrandsDetailView.as_view(), name='detail'),
     url(r'^certificates/(?P<pk>[0-9]+)/$', views.CertificatesDetailView.as_view(), name='detail'),
-
 
 ]
