@@ -2,14 +2,16 @@
 <header class="flex row">
     <div class="box-3">
         <div class="flex column justify">
-            <a href="/"><img src="{% static 'chart/img/brand.png' %}" width="253" height="51" alt="babycare"></a>
+            <a href="{% url 'home' %}"><img src="{% static 'chart/img/brand.png' %}" width="253" height="51" alt="babycare"></a>
             <h2>Органические товары</h2>
         </div>
     </div>
     <div class="box-3 sm-hide">
-        <p><span class="icon cell"></span> (044) 229-05-02</p>
-        <p><span class="icon cell"></span> (044) 229-05-03</p>
-        <p><span class="icon life"></span> (093) 306-08-18</p>
+        {% for contact in contact_list %}
+            {% if contact.show %}
+                <p><span class="icon cell"></span> {{ contact.phone}}</p>
+            {% endif %}
+        {% endfor %}
     </div>
     <div class="box-3 sm-hide">
         <form method="GET" action="">

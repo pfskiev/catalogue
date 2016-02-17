@@ -6,7 +6,7 @@
                 <input type="text" name="q" value="{{ request.GET.q }}" class="sm-show" placeholder="Поиск">
             </form>
         </li>
-        <li class="box-5"><a href="/">Главная</a></li>
+        <li class="box-5"><a href="{% url 'home' %}">Главная</a></li>
         <li class="box-5">
             <a class="dropdown-toggle" href="#">Каталог</a>
             <ul class="flex row wrap sm-column dropdown">
@@ -65,15 +65,15 @@
         <li class="box-5 about">
             <a class="dropdown-toggle" href="#">О нас</a>
             <ul class="flex column dropdown about">
-                <li class="box"><a href="/about">О компании БК</a></li>
-                <li class="box"><a href="/cooperation">Сотрудничество</a></li>
-                <li class="box"><a href="/brands">Бренды</a></li>
-                <li class="box"><a href="/certificates">Знаки сертификации</a></li>
-                <li class="box"><a href="/articles">Статьи</a></li>
+                <li class="box"><a href="{% url 'about' %}">О компании БК</a></li>
+                <li class="box"><a href="{% url 'cooperation' %}">Сотрудничество</a></li>
+                <li class="box"><a href="{% url 'brands' %}">Бренды</a></li>
+                <li class="box"><a href="{% url 'certificates' %}">Знаки сертификации</a></li>
+                <li class="box"><a href="{% url 'article' %}">Статьи</a></li>
             </ul>
         </li>
-        <li class="box-5"><a href="/map">Где купить</a></li>
-        <li class="box-5"><a href="/contacts">Контакты</a></li>
+        <li class="box-5"><a href="{% url 'map' %}">Где купить</a></li>
+        <li class="box-5"><a href="{% url 'contact' %}">Контакты</a></li>
     </ul>
     <div class="divider"></div>
 </nav>

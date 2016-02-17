@@ -26,14 +26,14 @@
             {% endfor %}
                 <div class="box">
                     <div class="pagination">
-                        {% if page_obj.has_previous %}
-                            <a href="?page={{ page_obj.previous_page_number }}">назад</a>
+                        {% if object_list.has_previous %}
+                            <a href="?page={{ object_list.previous_page_number }}">назад</a>
                         {% endif %}
                         <span>
-                            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+                            Страница {{ object_list.number }} из {{ object_list.paginator.num_pages }}.
                         </span>
-                        {% if page_obj.has_next %}
-                            <a href="?page={{ page_obj.next_page_number }}">далее</a>
+                        {% if object_list.has_next %}
+                            <a href="?page={{ object_list.next_page_number }}">далее</a>
                         {% endif %}
                     </div>
                 </div>

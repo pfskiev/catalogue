@@ -1,0 +1,12 @@
+{% if user.profile.blog %}
+    <a href="{{ user.profile.blog }}">Profile</a>
+{% endif %}
+{% if user.is_authenticated %}
+    <p>logged as:</p><h6>{{ user }}</h6>
+    <h6>{{ user.profile.bio }}</h6>
+{#    <li><a href="{% url 'newblat' %}">Share blat</a></li>#}
+{#    <li><a href="{% url 'myview' %}">My Blats</a></li>#}
+{#    <li><a href="{% url 'logout' %}?next=/">Logout</a></li>#}
+{% else %}
+    <a href="/login/?next=/">Log in</a>
+{% endif %}

@@ -30,11 +30,11 @@ class Product(models.Model):
 
 
 class About(models.Model):
-    paragraph = models.CharField(max_length=600, default='type')
+    paragraph = models.TextField(max_length=600, default='type')
     img = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        return self.title
+        return self.paragraph
 
 
 class Cooperation(models.Model):
@@ -78,6 +78,8 @@ class Contact(models.Model):
     phone = models.CharField(max_length=600, default='type')
     email = models.CharField(max_length=600, default='type')
     num = models.IntegerField(null=True, blank=True)
+    show = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.title

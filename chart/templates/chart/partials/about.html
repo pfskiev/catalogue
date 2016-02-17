@@ -16,6 +16,10 @@
         <div class="box-2">
             <div class="flex column left">
                 <p>{{ object.paragraph }}</p>
+                <a href="{{ object.id }}">подробнее</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'edit' pk=object.id %}">редактировать</a>
+                {% endif %}
             </div>
         </div>
     </div>

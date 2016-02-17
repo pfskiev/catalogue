@@ -1,12 +1,12 @@
 {% load staticfiles compress%}
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Constantine Podlesny">
     <title>БебиКеа - {% block title %}{% endblock %}</title>
     {% compress css %}
         <link rel="stylesheet" type="text/x-scss" href="{%  static 'chart/css/styles.scss' %}">
@@ -15,6 +15,8 @@
 <body>
 {% include 'chart/templates/header.html' %}
 {% include 'chart/templates/nav.html' %}
+{% include 'chart/templates/authentication.html' %}
+
 <section>
     {% block content %}
     {% endblock %}
@@ -22,6 +24,5 @@
 {% include 'chart/templates/footer.html' %}
 <script src="{% static 'chart/vendor/jquery/dist/jquery.min.js' %}"></script>
 <script src="{% static 'chart/js/main.js' %}"></script>
-<script src="{% static 'chart/vendor/modernizr/src/ModernizrProto.js' %}"></script>
 </body>
 </html>

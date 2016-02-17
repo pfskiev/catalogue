@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'registration',
+    'customuseradmin',
     'django_mailbox',
     'compressor',
     'chart'
@@ -55,6 +57,17 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'catalogue.urls'
+
+ACCOUNT_ACTIVATION_DAYS = 2  # кол-во дней для хранения кода активации
+
+AUTH_USER_EMAIL_UNIQUE = True
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = 'podlesny@undercover.com.ua'
+
 
 TEMPLATES = [
     {
@@ -114,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -146,4 +159,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'chart/static/chart/media'
 
 STATIC_ROOT = 'chart/static/'
+
+LOGIN_URL = '/login/'
+
+LOGOUT_URL = '/logout/'
 

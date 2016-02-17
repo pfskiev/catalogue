@@ -2,22 +2,62 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
 from django.shortcuts import render
 from django.views import generic
-from django.views.generic import ListView
 from chart.models import Article, Catalogue, Product, About, Cooperation, Brand, Certificate, Map, Contact, Menu
 
 
-class IndexView(generic.ListView):
-    template_name = 'chart/partials/home.html'
+def home(request):
+    queryset_list = Article.objects.all()
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(
+                Q(paragraph__icontains=query)
+        ).distinct()
+    paginator = Paginator(queryset_list, 10)  # Show 10 contacts per page
+    page_request_var = "page"
+    page = request.GET.get(page_request_var)
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        queryset = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        queryset = paginator.page(paginator.num_pages)
 
-    def get_queryset(self):
-        return Menu.objects.order_by('title')[:100]
+    context = {
+        "object_list": queryset,
+        "title": "Главная",
+        "contact_list": Contact.objects.all()
+    }
+    return render(request, 'chart/partials/home.html', context)
 
 
-class CatalogueView(ListView):
-    queryset = Catalogue.objects.order_by('title')[:100]
-    template_name = 'chart/partials/catalogue.html'
-    context_object_name = 'object_list'
-    paginate_by = 3
+def catalogue(request):
+    queryset_list = Catalogue.objects.all()
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(
+                Q(paragraph__icontains=query)
+        ).distinct()
+    paginator = Paginator(queryset_list, 10)  # Show 10 contacts per page
+    page_request_var = "page"
+    page = request.GET.get(page_request_var)
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        queryset = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        queryset = paginator.page(paginator.num_pages)
+
+    context = {
+        "object_list": queryset,
+        "title": "Главная",
+        "contact_list": Contact.objects.all(),
+        "page_request_var": page_request_var,
+    }
+    return render(request, 'chart/partials/catalogue.html', context)
 
 
 class ProductView(generic.ListView):
@@ -124,3 +164,13 @@ class ProductDetailView(generic.DetailView):
     model = Catalogue
     template_name = 'chart/partials/product.html'
     context_object_name = 'object_list'
+
+
+class Edit(generic.edit.UpdateView):
+    model = About
+    fields = ['paragraph', 'img']
+    success_url = '/about/'
+
+
+class AboutDetailView(object):
+    pass
